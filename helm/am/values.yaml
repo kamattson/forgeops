@@ -94,7 +94,7 @@ livenessTimeout: 5
 # Set the names below to provide custom secrets mounted in the AM pods (keystore, etc.). You must provide all secrets.
 # See templates/secrets.yaml and secrets/... for details
 existingSecrets: {}
-# existingSecrets: 
+# existingSecrets:
 #   openamKeys: openam-keys
 #   openamKeystorePasswords: openam-kesytore-passwords
 

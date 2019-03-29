@@ -150,7 +150,7 @@
 		    order="700"
                         resourceName="bindDn">
 		    <DefaultValues>
-                        <Value>cn=Directory Manager</Value>
+                        <Value>uid=admin</Value>
                     </DefaultValues>
 		</AttributeSchema>
                 <AttributeSchema name="iplanet-am-policy-config-ldap-bind-password"
@@ -483,7 +483,7 @@
 	    <OrganizationConfiguration name="/">
 		<AttributeValuePair>
 		    <Attribute name="iplanet-am-policy-config-ldap-bind-dn"/>
-		    <Value>cn=Directory Manager</Value>
+		    <Value>uid=admin</Value>
 		</AttributeValuePair>
 		<AttributeValuePair>
 		    <Attribute name="iplanet-am-policy-config-ldap-bind-password"/>

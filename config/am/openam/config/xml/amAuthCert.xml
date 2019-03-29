@@ -170,7 +170,7 @@
                     order="1200"
                     resourceName="userBindDN">
                     <DefaultValues>
-                         <Value>cn=Directory Manager</Value>
+                         <Value>uid=admin</Value>
                     </DefaultValues>
                 </AttributeSchema>
                 <AttributeSchema name="iplanet-am-auth-cert-principal-passwd"
@@ -398,7 +398,7 @@
                         order="1200"
                         resourceName="userBindDN">
                         <DefaultValues>
-                             <Value>cn=Directory Manager</Value>
+                             <Value>uid=admin</Value>
                         </DefaultValues>
                     </AttributeSchema>
                     <AttributeSchema name="iplanet-am-auth-cert-principal-passwd"

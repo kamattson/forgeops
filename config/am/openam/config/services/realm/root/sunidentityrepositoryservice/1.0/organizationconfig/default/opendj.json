@@ -17,7 +17,7 @@
       "sun-idrepo-ldapv3-config-authpw" : null,
       "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQ/rGx/5NG4q82jNXsnrKaOfkjBUh2BQuvn4T1PtfMblpnzDMPTJ02gmwhN3zrztF/DC/w96oJvLkm20OlSkcZRg==",
       "sun-idrepo-ldapv3-config-connection-mode" : "LDAP",
-      "sun-idrepo-ldapv3-config-authid" : "cn=Directory Manager"
+      "sun-idrepo-ldapv3-config-authid" : "uid=admin"
     },
     "_type" : {
       "_id" : "sunIdentityRepositoryService",

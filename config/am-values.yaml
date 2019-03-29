@@ -1,0 +1,9 @@
+catalinaOpts: "-server -Dcom.sun.identity.sm.sms_object_filebased_enabled=true"
+domain: forgeops.com
+ingress:
+  annotations:
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT,GET,POST,HEAD,PATCH,DELETE"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "authorization,x-requested-with,accept-api-version,content-type"
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:8888"

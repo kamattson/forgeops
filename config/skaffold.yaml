@@ -1,5 +1,5 @@
 # Skaffold for the full stack (eventually). Run:
-# skaffold dev 
+# skaffold dev
 # If you quite skaffold, the directory PVC are not deleted. You need to manually delete:
 # kubectl delete pvc --all
 apiVersion: skaffold/v1beta7
@@ -36,10 +36,10 @@ deploy:
       chartPath: ../helm/amster
       values:
         image: gcr.io/engineering-devops/sk-amster
-    # - name: "{{.HELM_PREFIX}}sk-idm
-    #   chartPath: ../helm/idm
-    #   values:
-    #     image: gcr.io/engineering-devops/sk-idm
+    - name: "{{.HELM_PREFIX}}sk-idm"
+      chartPath: ../helm/idm
+      values:
+        image: gcr.io/engineering-devops/sk-idm
     - name: "{{.HELM_PREFIX}}ig"
       chartPath: ../helm/ig
       values:
@@ -47,7 +47,7 @@ deploy:
 profiles:
 # Profile used to initialize the idrepo ds instance with the skeleton AM config. AM file based config
 # needs this to bootstrap. This limitation should be removed shortly.
-# Run this with skaffold run -p init 
+# Run this with skaffold run -p init
 - name: init
   deploy:
     helm:
@@ -79,7 +79,7 @@ profiles:
     helm:
       flags:
         install: ['-f', 'helm-common.yaml']
-# A "dev" instance where the data in ds is ephemeral - goes away after each install.  
+# A "dev" instance where the data in ds is ephemeral - goes away after each install.
 - name: dev
   deploy:
     helm:
@@ -89,6 +89,12 @@ profiles:
       releases:
       - name: "{{.HELM_PREFIX}}frconfig"
         chartPath: ../helm/frconfig
+        setValues:
+          domain: forgeops.com
+          certmanager.enabled: true
+          certmanager.acme: false
+          certmanager.issuer: ca-issuer
+          certmanager.issuerKind: Issuer
       - name: "{{.HELM_PREFIX}}idrepo"
         chartPath: ../helm/ds
         setValues:
@@ -98,17 +104,23 @@ profiles:
         chartPath: ../helm/am
         values:
           image: gcr.io/engineering-devops/sk-am
-        setValues:
-          catalinaOpts: "-server -Dcom.sun.identity.sm.sms_object_filebased_enabled=true"
+        valuesFiles:
+        - am-values.yaml
       - name: "{{.HELM_PREFIX}}sk-amster"
         chartPath: ../helm/amster
+        setValues:
+          domain: forgeops.com
+          amadminPassword: password
+          resources.requests.memory: "64Mi"
         values:
           image: gcr.io/engineering-devops/sk-amster
       - name: "{{.HELM_PREFIX}}sk-idm"
         chartPath: ../helm/idm
         values:
           image: gcr.io/engineering-devops/sk-idm
-      - name: "{{.HELM_PREFIX}}ig"
-        chartPath: ../helm/ig
-        values:
-          image: gcr.io/engineering-devops/sk-ig
+        valuesFiles:
+        - idm-values.yaml
+#      - name: "{{.HELM_PREFIX}}ig"
+#        chartPath: ../helm/ig
+#        values:
+#          image: gcr.io/engineering-devops/sk-ig

@@ -11,7 +11,7 @@
     "ou" : null
   },
   "data" : {
-    "bindDn" : "cn=Directory Manager",
+    "bindDn" : "uid=admin",
     "bindPassword" : null,
     "_type" : {
       "_id" : "iPlanetAMPolicyConfigService",

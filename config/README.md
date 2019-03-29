@@ -46,7 +46,7 @@ There is a top level skaffold.yaml that can be used to iterate on the entire pla
 
 ```bash
 cd config
-skaffold dev
+skaffold dev -p dev
 ```
 
 ## Outstanding issues

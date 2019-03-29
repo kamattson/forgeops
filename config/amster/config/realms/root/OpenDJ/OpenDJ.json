@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "realm" : "/",
-    "amsterVersion" : "6.5.0",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
     "entityType" : "OpenDJ",
     "entityId" : "OpenDJ",
     "pathParams" : { }
@@ -36,19 +36,18 @@
     "ldapsettings" : {
       "sun-idrepo-ldapv3-config-connection_pool_max_size" : 10,
       "openam-idrepo-ldapv3-behera-support-enabled" : true,
-      "sun-idrepo-ldapv3-config-authid" : "cn=Directory manager",
+      "sun-idrepo-ldapv3-config-authid" : "uid=admin",
       "openam-idrepo-ldapv3-proxied-auth-enabled" : false,
       "openam-idrepo-ldapv3-contains-iot-identities-enriched-as-oauth2client" : false,
       "sun-idrepo-ldapv3-config-max-result" : 1000,
       "sun-idrepo-ldapv3-config-search-scope" : "SCOPE_SUB",
       "sun-idrepo-ldapv3-config-time-limit" : 10,
       "openam-idrepo-ldapv3-heartbeat-interval" : 10,
-      "sun-idrepo-ldapv3-config-ldap-server" : [ "configstore-0.configstore:1389" ],
+      "sun-idrepo-ldapv3-config-ldap-server" : [ "idrepo-0.idrepo:1389" ],
       "openam-idrepo-ldapv3-heartbeat-timeunit" : "SECONDS",
       "sun-idrepo-ldapv3-config-organization_name" : "ou=identities",
       "sun-idrepo-ldapv3-config-connection-mode" : "LDAP",
-      "sun-idrepo-ldapv3-config-authpw" : null,
-      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQoVfmsQ9abpwrNeunA09cdWNpT9qXmHpHxnEKEK7w3V5AoR/oMv0keQ=="
+      "sun-idrepo-ldapv3-config-authpw" : "password"
     },
     "cachecontrol" : {
       "sun-idrepo-ldapv3-dncache-enabled" : true,

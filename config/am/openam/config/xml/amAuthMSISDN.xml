@@ -94,7 +94,7 @@
                     order="600"
                     resourceName="ldapUserBindDN">
                         <DefaultValues>
-                         <Value>cn=Directory Manager</Value>
+                         <Value>uid=admin</Value>
                         </DefaultValues>
                 </AttributeSchema>
                 <AttributeSchema name="sunAMAuthMSISDNPrincipalPasswd"
@@ -213,7 +213,7 @@
                         order="600"
                         resourceName="ldapUserBindDN">
                             <DefaultValues>
-                             <Value>cn=Directory Manager</Value>
+                             <Value>uid=admin</Value>
                             </DefaultValues>
                     </AttributeSchema>
                     <AttributeSchema name="sunAMAuthMSISDNPrincipalPasswd"
