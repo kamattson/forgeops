@@ -64,7 +64,7 @@
       "scopes" : [ "openid", "fr:idm:profile", "fr:idm:profile_update", "fr:idm:consent_read", "fr:idm:notifications" ],
       "agentgroup" : null,
       "refreshTokenLifetime" : 0,
-      "redirectionUris" : [ "https://sample.iam.forgeops.com/enduser/appAuthHelperRedirect.html", "https://sample.iam.forgeops.com/enduser/sessionCheck.html","http://localhost:8888/appAuthHelperRedirect.html", "http://localhost:8888/sessionCheck.html" ],
+      "redirectionUris" : [ "https://&{fqdn}/enduser/appAuthHelperRedirect.html", "https://&{fqdn}/enduser/sessionCheck.html","http://localhost:8888/appAuthHelperRedirect.html", "http://localhost:8888/sessionCheck.html" ],
       "status" : "Active"
     },
     "coreUmaClientConfig" : {
