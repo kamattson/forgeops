@@ -3,7 +3,7 @@ AM Simple runtime config library
 """
 import time
 
-from requests import get, post, put, delete
+from requests import get, post, put
 import requests
 
 requests.packages.urllib3.disable_warnings()
@@ -11,7 +11,7 @@ requests.packages.urllib3.disable_warnings()
 
 class AMConfig(object):
     def __init__(self):
-        self.am_fqdn = 'openam'  # parser.get('am', 'AM_FQDN')
+        self.am_fqdn = 'openam'
         self.am_url = f'http://{self.am_fqdn}:80/am'
         self.wait_for_am()
         self.admin_token = self.admin_login()
@@ -131,7 +131,7 @@ class AMConfig(object):
 if __name__ == '__main__':
     print('Doing minimal AM smoke test config')
     cfg = AMConfig()
-    cfg.create_oauth2_provider()
+    # cfg.create_oauth2_provider()
     cfg.create_oauth2_client()
     cfg.create_policy_all_authenticated(name='test-policy',
                                         resource='http://test-policy.com/test',
