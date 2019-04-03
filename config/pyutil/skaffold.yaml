@@ -10,7 +10,7 @@ deploy:
     manifests:
     - pod-install.yaml
 profiles:
-# This profile deploys AM to prep the idrepo. It disables FBC
+# This profile runs runtime configuration
 - name: runtime-cfg
   deploy: 
     kubectl:
