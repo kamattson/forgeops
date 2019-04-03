@@ -1,0 +1,18 @@
+apiVersion: skaffold/v1beta7
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/engineering-devops/pyutil
+  tagPolicy:
+    sha256: {}
+deploy:
+  kubectl:
+    manifests:
+    - pod-install.yaml
+profiles:
+# This profile deploys AM to prep the idrepo. It disables FBC
+- name: runtime-cfg
+  deploy: 
+    kubectl:
+      manifests:
+      - pod-runtime-cfg.yaml
