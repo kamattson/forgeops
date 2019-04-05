@@ -26,6 +26,9 @@ spec:
         prometheus.io/port: "8080"
         sidecar.istio.io/inject: "{{ .Values.istio.enabled }}"
     spec:
+      {{- with .Values.serviceAccountName }}
+      serviceAccountName: {{ . }}
+      {{- end }}
       {{ if eq .Values.config.strategy  "git" }}
       initContainers:
       - name: git-init

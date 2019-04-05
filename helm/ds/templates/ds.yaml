@@ -41,6 +41,9 @@ spec:
         release: {{ .Release.Name }}
         component: {{ .Values.component }}
     spec:
+      {{- with .Values.serviceAccountName }}
+      serviceAccountName: {{ . }}
+      {{- end }}
       affinity:
         podAntiAffinity:
         {{- if eq .Values.podAntiAffinity "hard" }}
